@@ -1,1 +1,22 @@
+# Make the plot
+p <- ggplot(data, aes(x = as.factor(Country), # x-axis factor label
+                      
+                      # y-axis numerical parameter
+                      y = Value)) +     
+  
+  # the bar height will represent
+  # the actual value of the data
+  geom_bar(stat = "identity",
+           fill=alpha("blue", 0.5)) + # define bar color
+  
+  # define size of inner circle
+  # and the size of the bar
+  ylim(-10,30) +
+  
+  # define the polar coordinate
+  coord_polar(start = 0)
+
+# plot
+p
+ggsave("small_album.png", width=15, height=15, unit="cm", dpi=300)
 
